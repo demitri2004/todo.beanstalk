@@ -1,0 +1,7 @@
+{
+  "name": "todo-beanstalk",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
