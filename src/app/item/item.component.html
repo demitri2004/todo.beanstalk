@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>To Do Item #{{item.id}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item *ngIf="!editMode">
+        <ion-label>{{item.description}}</ion-label>
+        <ion-checkbox checked="{{item.isComplete}}"></ion-checkbox>
+      </ion-item>
+
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="editMode">
+        <ion-item>
+          <ion-input [(ngModel)]="item.description" label="Description:" name="description"></ion-input>         
+        </ion-item>
+        <ion-item>
+          <ion-checkbox [(ngModel)]="item.isComplete" name="isComplete">Completed</ion-checkbox>
+        </ion-item>        
+        <ion-button type="submit" fill="">Done</ion-button>
+      </form>
+
+      <ion-button fill="" (click)="editModeFlip()">Edit</ion-button>      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button [routerLink]="['/tabs/tab1']">Back to list</ion-button>
+</ion-content>

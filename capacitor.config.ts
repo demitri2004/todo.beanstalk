@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'todo.beanstalk',
+  appId: 'com.todo.beanstalk',
   appName: 'todo-beanstalk',
   webDir: 'www',
   server: {
