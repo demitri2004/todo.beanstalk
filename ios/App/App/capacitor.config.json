@@ -1,0 +1,8 @@
+{
+	"appId": "com.todo.beanstalk",
+	"appName": "todo-beanstalk",
+	"webDir": "www",
+	"server": {
+		"androidScheme": "https"
+	}
+}
