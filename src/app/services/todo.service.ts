@@ -21,11 +21,14 @@ export class TodoService {
   }
 
   editToDo(todo: ToDo): Observable<ToDo> {
-    debugger
-    return this.http.post<ToDo>(this.apiUrl + "api/todo/" + todo.id, todo)
+    return this.http.put<ToDo>(this.apiUrl + "api/todo/" + todo.id, todo)
   }
 
   createToDo(todo: ToDo): Observable<ToDo> {
     return this.http.post<ToDo>(this.apiUrl + "api/todo/", todo)
+  }
+
+  deleteToDo(todo: ToDo): Observable<ToDo> {
+    return this.http.delete<ToDo>(this.apiUrl + "api/todo/" + todo.id)
   }
 }

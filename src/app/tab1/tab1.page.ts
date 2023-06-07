@@ -22,8 +22,14 @@ export class Tab1Page {
   constructor(private toDoService: TodoService) { }
 
   ngOnInit() {
+    console.log('in ngOnInit')
     this.toDoService.getData().subscribe((response) => {
       this.data = response;
     });
+  }
+
+  ionViewWillEnter(){
+    console.log('in ionViewWillEnter')
+    this.ngOnInit();
   }
 }

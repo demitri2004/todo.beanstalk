@@ -19,9 +19,11 @@
           <ion-checkbox [(ngModel)]="item.isComplete" name="isComplete">Completed</ion-checkbox>
         </ion-item>        
         <ion-button type="submit" fill="">Done</ion-button>
+        <ion-button fill="" (click)="deleteTodo(form)">Delete</ion-button>     
       </form>
 
-      <ion-button fill="" (click)="editModeFlip()">Edit</ion-button>      
+      <ion-button fill="" (click)="editModeFlip()">Edit</ion-button>     
+       
     </ion-card-content>
   </ion-card>
 

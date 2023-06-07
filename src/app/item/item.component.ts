@@ -43,4 +43,9 @@ export class ItemComponent implements OnInit {
     })    
   }
 
+  deleteTodo(form:NgForm){
+    this.todoService.deleteToDo(this.item).subscribe(p => {
+      console.log("deleted")
+    })    
+  }
 }
