@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ToDo } from './todo';
+import { CapacitorHttp, HttpResponse } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root'
@@ -31,4 +32,22 @@ export class TodoService {
   deleteToDo(todo: ToDo): Observable<ToDo> {
     return this.http.delete<ToDo>(this.apiUrl + "api/todo/" + todo.id)
   }
+
+  getWeather(){
+    return this.http.get<any>("https://catfact.ninja/fact")
+  }
+
+  doGet = async () => {
+    const options = {
+      url: this.apiUrl + "api/todo/",
+      headers: {  },
+      params: {  },
+    };
+  
+    const response: HttpResponse = await CapacitorHttp.get(options);
+    return response;
+  
+    // or...
+    // const response = await CapacitorHttp.request({ ...options, method: 'GET' })
+  };
 }

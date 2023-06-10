@@ -18,6 +18,7 @@ export class Tab1Page {
   data: ToDo[] = [];
   message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
   name: string = "";
+  fact = "";
 
   constructor(private toDoService: TodoService) { }
 
@@ -31,5 +32,18 @@ export class Tab1Page {
   ionViewWillEnter(){
     console.log('in ionViewWillEnter')
     this.ngOnInit();
+  }
+
+  getWeather(){
+    this.toDoService.getWeather().subscribe(p => {
+      console.log(p)
+      this.fact = p.fact;
+    })
+  }
+
+  doGet(){
+    this.toDoService.doGet().then(p => {
+      console.log(p)
+    })
   }
 }
